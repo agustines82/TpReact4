@@ -2,7 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import FormularioTarea from "./components/FormularioTarea";
-import ListaTarea from "./components/ListaTarea";
+
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
             <section className="container w-75 my-5 py-5 border">
                 <h1 className="display-5 text-center">Bienvenido</h1>
                 <FormularioTarea />
-                <ListaTarea />
+                
             </section>
         </>
     );
