@@ -18,3 +18,4 @@ Trabajo practico que consiste en crear una aplicación web que muestre una lista
 
 -   Bootsptrap
 -   React- Boostrap
+-   SweatAlert2
