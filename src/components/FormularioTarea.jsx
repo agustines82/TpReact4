@@ -9,13 +9,20 @@ const FormularioTarea = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        //para validar el input del formulario necesito pasar todo a minusculas y sin espacios vacios de manera de que corroboremos que el lengh sea > 0 . Para ello como no puedo trabajar directamente sobre el state creo otra variable
         let tareita = tarea.toLowerCase().trim();
+        //tambien necesito corroborar que no escriban tareas repetidas en la lista. Para ello utilizamos el metodo includes de los arreglos
+        let listita = listaTareas.includes(tarea);
 
         if (tareita.length > 0) {
-            //guardo el valor del input en el arreglo
-            setListaTareas([...listaTareas, tarea]);
-            //limpio el input
-            setTarea(" ");
+            if (!listita) {
+                //guardo el valor del input en el arreglo
+                setListaTareas([...listaTareas, tarea]);
+                //limpio el input
+                setTarea("");
+            } else {
+                Swal.fire("La tarea ya se encuentra registrada");
+            }
         } else {
             Swal.fire("Ingresa una tarea.");
         }
