@@ -2,16 +2,23 @@ import React from "react";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import ListaTarea from "./ListaTarea";
+import Swal from "sweetalert2";
 const FormularioTarea = () => {
     const [tarea, setTarea] = useState("");
     const [listaTareas, setListaTareas] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //guardo el valor del input en el arreglo
-        setListaTareas([...listaTareas, tarea]);
-        //limpio el input
-        setTarea(" ");
+        let tareita = tarea.toLowerCase().trim();
+
+        if (tareita.length > 0) {
+            //guardo el valor del input en el arreglo
+            setListaTareas([...listaTareas, tarea]);
+            //limpio el input
+            setTarea(" ");
+        } else {
+            Swal.fire("Ingresa una tarea.");
+        }
     };
 
     const borrarTarea = (nombreTarea) => {
