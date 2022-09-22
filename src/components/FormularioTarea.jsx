@@ -13,6 +13,14 @@ const FormularioTarea = () => {
         //limpio el input
         setTarea(" ");
     };
+
+    const borrarTarea = (nombreTarea) => {
+        //creo un arreglo nuevo sin la tarea a borra para poder luego modificar el state
+        let listaFiltrada = listaTareas.filter((item) => item !== nombreTarea);
+        //actualizo el state
+        setListaTareas(listaFiltrada);
+    };
+
     return (
         <>
             <p className="container text-center lead">Ingresa tus tareas</p>
@@ -21,7 +29,7 @@ const FormularioTarea = () => {
                     <Form.Control type="text" placeholder="Tarea 1..." onChange={(e) => setTarea(e.target.value)} value={tarea} />
                 </Form.Group>
             </Form>
-            <ListaTarea listaTareas={listaTareas} />
+            <ListaTarea listaTareas={listaTareas} borrarTarea={borrarTarea} />
         </>
     );
 };
