@@ -2,13 +2,13 @@ import React from "react";
 import { ListGroup } from "react-bootstrap";
 import ItemTarea from "./ItemTarea";
 
-const ListaTarea = () => {
+const ListaTarea = ({ listaTareas }) => {
     return (
-        <>
-            <ListGroup>
-                <ItemTarea />
-            </ListGroup>
-        </>
+        <ListGroup>
+            {listaTareas.map((item, position) => (
+                <ItemTarea key={position} nombreTarea={item} />
+            ))}
+        </ListGroup>
     );
 };
 
