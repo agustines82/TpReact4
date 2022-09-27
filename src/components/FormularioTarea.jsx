@@ -1,11 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import ListaTarea from "./ListaTarea";
 import Swal from "sweetalert2";
 const FormularioTarea = () => {
+    //cargar las tareas del local storage
+    const tareasLocalStorage = JSON.parse(localStorage.getItem("keyListaTareas")) || [];
+
     const [tarea, setTarea] = useState("");
-    const [listaTareas, setListaTareas] = useState([]);
+    const [listaTareas, setListaTareas] = useState(tareasLocalStorage);
+
+    useEffect(() => {
+        //guardar el arreglo de las tareas en el local storage
+        localStorage.setItem("keyListaTareas", JSON.stringify(listaTareas));
+    }, [listaTareas]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
