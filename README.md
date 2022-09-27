@@ -8,7 +8,7 @@ Trabajo practico que consiste en crear una aplicación web que muestre una lista
 
 ## GitHub
 
-[Git](https://github.com/agustines82/TpReact4) :smiley_cat:
+[Git](https://github.com/agustines82/TpReact4-5) :smiley_cat:
 
 ## autor
 
