@@ -8,7 +8,12 @@ Trabajo practico que consiste en crear una aplicación web que muestre una lista
 
 ## GitHub
 
-[Git](https://github.com/agustines82/TpReact4-5-ListaTareas) :smiley_cat:
+[Git](https://github.com/agustines82/TpReact4-5-ListaTareas)
+
+## Netlify
+
+Prueba el proyecto online
+[Netlify](https://preeminent-bunny-f9a71a.netlify.app/)
 
 ## autor
 
